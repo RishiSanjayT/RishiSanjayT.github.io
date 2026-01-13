@@ -988,3 +988,45 @@ section {
 }
 
 /*# sourceMappingURL=styles.css.map */
+/* Force name to stay in one line on laptop */
+.full-name {
+  white-space: nowrap;
+}
+
+/* Responsive font sizing to avoid wrapping */
+.name {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+/* Laptop specific safety */
+@media (max-width: 1366px) {
+  .name {
+    font-size: 2.3rem;
+  }
+}
+/* Contact info alignment fix */
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contact-item .icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 140px; /* keeps labels aligned */
+}
+
+.contact-item p,
+.contact-item span {
+  white-space: nowrap; /* prevents breaking into next line */
+}
+
+/* Laptop safety fix */
+@media (max-width: 1366px) {
+  .contact-item p,
+  .contact-item span {
+    font-size: 0.95rem;
+  }
+}
